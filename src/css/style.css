@@ -1,0 +1,329 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../css/fonts/OpenSans-Regular.ttf);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+}
+
+html,
+body,
+h1,
+html h2,
+h3,
+h4,
+h5,
+h6,
+html p,
+ol,
+ul,
+li,
+pre,
+code,
+address,
+variable,
+form,
+fieldset,
+blockquote {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .header {
+  width: 100%;
+  height: 116px;
+  padding: 30px 30px 30px 37px;
+  background-color: #7ed321;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .header .header_logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .header .header_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .header .header_title p {
+  margin-right: 45px;
+  white-space: nowrap;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  padding: 0px 4px 4px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.wrapper .header .header_title p.active {
+  border-bottom: 2px solid #fff;
+}
+
+.wrapper .header .header_title p:hover {
+  cursor: pointer;
+}
+
+.wrapper .header .header_title img:hover {
+  cursor: pointer;
+}
+
+.wrapper .add_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  background-color: #7ed321;
+  width: 503px;
+  height: 379px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 44px;
+}
+
+.wrapper .add_block img {
+  position: absolute;
+  top: 27px;
+  right: 27px;
+}
+
+.wrapper .add_block .add_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .add_block .add_item p {
+  font-size: 16px;
+  font-weight: normal;
+  width: 74px;
+  margin-right: 16px;
+}
+
+.wrapper .add_block .add_item input {
+  width: 236px;
+  height: 31px;
+  border-radius: 7px;
+  border: solid 1px #979797;
+  outline: none;
+}
+
+.wrapper .add_block .add_item:nth-child(3) {
+  margin-bottom: 46px;
+}
+
+.wrapper .add_block .save_btn {
+  width: 320px;
+  height: 42px;
+  border-radius: 25.2px;
+  border: 2px solid #fff;
+  background-color: #7ed321;
+}
+
+.wrapper .filter_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  margin-bottom: 50px;
+  background-color: #eaeaea;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .filter_block.active {
+  visibility: visible;
+}
+
+.wrapper .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .content .jogs_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .content .jogs_block .jog_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .content .jogs_block .jog_item img {
+  margin-right: 45px;
+}
+
+.wrapper .content .jogs_block .jog_item .jog_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .content .jogs_block .jog_item .jog_text p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.wrapper .content .jogs_block .jog_item .jog_text p span {
+  opacity: 0.5;
+}
+
+.wrapper .content .jogs_block .jog_item .jog_text .date {
+  margin-bottom: 9px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.wrapper .content .info_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 614px;
+}
+
+.wrapper .content .info_block h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #7ed321;
+  margin-bottom: 15px;
+}
+
+.wrapper .content .info_block p {
+  font-size: 14px;
+  line-height: 1.71;
+  margin-bottom: 30px;
+}
+
+.wrapper .content .login_block {
+  width: 503px;
+  height: 379px;
+  background-color: #e990f9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .content .login_block img {
+  width: 160px;
+  height: 150px;
+}
+
+.wrapper .content .login_block .login_btn {
+  width: 151px;
+  height: 60px;
+  border-radius: 36px;
+  border: solid 3px #fff;
+  background-color: #e990f9;
+  color: #fff;
+  margin-top: 56px;
+}
+
+.wrapper .content .login_block .login_btn:hover {
+  cursor: pointer;
+}
+
+.add_btn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+}
+
+.add_btn:hover {
+  cursor: pointer;
+}
