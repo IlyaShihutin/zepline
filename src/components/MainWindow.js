@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import {  useSelector } from 'react-redux';
 import Header from "./Header";
 import Contact from "./Contact";
 import Info from "./Info";
@@ -10,37 +10,30 @@ import { TABS } from "../_constants/tabConstants";
 
 const MainWindow = () => {
     const [activeTab, setActiveTab] = useState(TABS.LOG)
-  
+    const [editModal, setEditModal] = useState([])
+    const isLoading = useSelector(state => state.jogsReducer.isLoading);
+    const error = useSelector(state => state.jogsReducer.error);
 
-    // function getTokenData() {
-    //     return fetch('https://jogtracker.herokuapp.com/api/v1/auth/uuidLogin', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/x-www-form-urlencoded'
-    //         },
-    //         body: "uuid=hello",
-    //     })
-    //         .then((res) => {
-    //             if (res.status === 200) {
-    //                 const tokenData = res.json();
-    //                 saveToken(JSON.stringify(tokenData));
-    //                 return Promise.resolve()
-    //             }
-    //             return Promise.reject();
-    //         });
-    // }
+    const openEditModal = (jog) => {
+        setEditModal(jog)
+        setActiveTab(TABS.ADD)
+    }
     return (
         <div className="wrapper">
             <Header activeTab={activeTab} setActiveTab={setActiveTab} />
-            <div className="content">
-                {activeTab === TABS.CONTACT && <Contact />}
-                {activeTab === TABS.INFO && <Info />}
-                {activeTab === TABS.JOGS && <Jogs />}
-                {activeTab === TABS.LOG && <Login />}
-                {activeTab === TABS.ADD && <AddModal setActiveTab={setActiveTab} />}
-            </div>
-            {activeTab !== TABS.LOG && <img src={`${process.env.PUBLIC_URL}/img/add.svg`} onClick={() => setActiveTab(TABS.ADD)} className="add_btn" alt="calendar"></img>}
+            <p className={error ? "error_text visible" : "error_text"}>{error}</p>
+            {!isLoading && <>
+                <div className="content">
+                    {activeTab === TABS.CONTACT && <Contact />}
+                    {activeTab === TABS.INFO && <Info />}
+                    {activeTab === TABS.JOGS && <Jogs setActiveTab={setActiveTab} openEditModal={openEditModal} />}
+                    {activeTab === TABS.LOG && <Login setActiveTab={setActiveTab} />}
+                    {activeTab === TABS.ADD && <AddModal setActiveTab={setActiveTab} editModal={editModal} setEditModal={setEditModal} />}
+                </div>
+                {activeTab !== TABS.LOG && <img src={`${process.env.PUBLIC_URL}/img/add.svg`} onClick={() => setActiveTab(TABS.ADD)} className="add_btn" alt="add"></img>}
+            </>
+            }
+
         </div>
     );
 }

@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { TABS } from "../_constants/tabConstants";
-import {DataPicker} from "./DataPicker"
+import DataPicker from "./DataPicker"
+import { jogsAction } from '../redux/actions/jogsAction';
 const Header = ({ activeTab, setActiveTab }) => {
     const [filterActive, setFilterActive] = useState(false)
-    const [selectDay, setSelectDay] = useState(new Date());
-    console.log(selectDay)
+    const [filterDate, setFilterDate] = useState("");
+    const dispatch = useDispatch();
+
+    const onSelectDay = (date, name) => {
+        setFilterDate({ ...filterDate, [name]: date });
+    }
+
+    useEffect(() => {
+        dispatch(jogsAction.filter(filterDate));
+    }, [filterDate])
+
     return (
         <>
             <div className="header">
@@ -15,12 +25,14 @@ const Header = ({ activeTab, setActiveTab }) => {
                         <p onClick={() => setActiveTab(TABS.JOGS)} className={activeTab === TABS.JOGS ? "active" : ""}>JOGS</p>
                         <p onClick={() => setActiveTab(TABS.INFO)} className={activeTab === TABS.INFO ? "active" : ""}>INFO</p>
                         <p onClick={() => setActiveTab(TABS.CONTACT)} className={activeTab === TABS.CONTACT ? "active" : ""}>CONTACT US</p>
-                        <img src={`${process.env.PUBLIC_URL}/img/filter_img.svg`} onClick={() => setFilterActive(!filterActive)} className="filter_img" alt="calendar"></img>
+                        {!filterActive ? <img src={`${process.env.PUBLIC_URL}/img/filter_close.svg`} onClick={() => setFilterActive(!filterActive)} className="filter_img" alt="calendar"></img>
+                            : <img src={`${process.env.PUBLIC_URL}/img/filter_open.svg`} onClick={() => setFilterActive(!filterActive)} className="filter_img" alt="calendar"></img>}
                     </div>
                 }
             </div>
             <div className={filterActive ? "filter_block active" : "filter_block"}>
-            {/* <DataPicker selectDay={selectDay} setSelectDay={setSelectDay} /> */}
+                <DataPicker name="from" title="Date from" selectDay={filterDate.from} setSelectDay={onSelectDay} />
+                <DataPicker name="to" title="Date to" selectDay={filterDate.to} setSelectDay={onSelectDay} />
             </div>
         </>
     );

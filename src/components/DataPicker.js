@@ -1,41 +1,32 @@
-// import React from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { actionCity } from "../redux/actions/actionCity"
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
-// import { translate } from "../lang/translations"
-// const ExampleCustomInput = React.forwardRef(
-//     ({ value, onClick }, ref) => (
-//         <img src={`${process.env.PUBLIC_URL}/icons/calendar.svg`} onClick={onClick} ref={ref} alt="calendar"></img>
-//     ),
-// );
-// function DataPicker(props) {
+import React, { useMemo } from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-    
+const DataPicker = ({ title, name, selectDay, setSelectDay }) => {
+    const minDate = useMemo(() => new Date(1970, 0, 1), []);
+    const maxDate = useMemo(() => new Date(), []);
+    return (
+        <React.Fragment>
+            <div className="date_input">
+                <p>{title}</p>
+                <DatePicker
+                    selected={selectDay}
+                    type="day"
+                    onChange={date => setSelectDay(date, name)}
+                    isClearable={false}
+                    showMonthDropdown
+                    showYearDropdown
+                    maxDate={maxDate}
+                    minDate={minDate}
+                    dropdownMode="select"
+                    name={name}
+                    autoComplete="off"
+                />
+            </div>
+        </React.Fragment>
+    );
+}
 
-    
-//     return (
-//         <React.Fragment>
-//             <div className="calendar">
-//                 <p>{translate[lang]["Choose a date"]}</p>
-//                 <DatePicker
-//                     selected={props.selectDay}
-//                     type="day"
-//                     onChange={date => setDate(date)}
-//                     isClearable={false}
-//                     customInput={<ExampleCustomInput />}
-//                     maxDate={maxDate}
-//                     minDate={minDate}
-//                     showMonthDropdown
-//                     locale={`${lang}`}
-//                     showYearDropdown
-//                     dropdownMode="select"
-//                 />
-//             </div>
-//         </React.Fragment>
-//     );
-// }
-
-// export default DataPicker;
+export default DataPicker;
 
 

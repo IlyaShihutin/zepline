@@ -1,20 +1,18 @@
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import User from '../_services/User.service';
-import { authHeader } from "../_helpers/auth-header"
-const Login = () => {
-    const token = useMemo(() => authHeader(), []);
-
+import { TABS } from "../_constants/tabConstants";
+import { jogsAction } from '../redux/actions/jogsAction';
+const Login = ({ setActiveTab }) => {
+    const dispatch = useDispatch();
     const loggin = () => {
 
-        if (!token) {
-            console.log("token")
-            console.log(token)
+        if (!localStorage.getItem('userToken')) {
             User.auth();
         }
-        User.get()
-
+        dispatch(jogsAction.get());
+        setActiveTab(TABS.JOGS);
     }
     return (
         <div className="login_block">

@@ -109,6 +109,10 @@ blockquote {
   cursor: pointer;
 }
 
+.wrapper .header .header_title .filter_img {
+  min-width: 39px;
+}
+
 .wrapper .add_block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,6 +140,7 @@ blockquote {
   right: 27px;
 }
 
+.wrapper .add_block .date_input,
 .wrapper .add_block .add_item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -146,6 +151,7 @@ blockquote {
           align-items: center;
 }
 
+.wrapper .add_block .date_input p,
 .wrapper .add_block .add_item p {
   font-size: 16px;
   font-weight: normal;
@@ -153,6 +159,7 @@ blockquote {
   margin-right: 16px;
 }
 
+.wrapper .add_block .date_input input,
 .wrapper .add_block .add_item input {
   width: 236px;
   height: 31px;
@@ -161,16 +168,26 @@ blockquote {
   outline: none;
 }
 
-.wrapper .add_block .add_item:nth-child(3) {
-  margin-bottom: 46px;
-}
-
+.wrapper .add_block .cansel_modal_btn,
 .wrapper .add_block .save_btn {
   width: 320px;
   height: 42px;
   border-radius: 25.2px;
   border: 2px solid #fff;
   background-color: #7ed321;
+}
+
+.wrapper .add_block .cansel_modal_btn:hover,
+.wrapper .add_block .save_btn:hover {
+  cursor: pointer;
+}
+
+.wrapper .add_block .cansel_modal_btn {
+  margin-top: 20px;
+}
+
+.wrapper .add_block .cancel_btn:hover {
+  cursor: pointer;
 }
 
 .wrapper .filter_block {
@@ -187,10 +204,39 @@ blockquote {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 16px 0px 13px;
 }
 
 .wrapper .filter_block.active {
   visibility: visible;
+}
+
+.wrapper .filter_block .date_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .filter_block .date_input:nth-child(2) {
+  margin-left: 45px;
+}
+
+.wrapper .filter_block .date_input p {
+  font-size: 13px;
+  opacity: 0.5;
+  margin-right: 15px;
+}
+
+.wrapper .filter_block .date_input input {
+  width: 100px;
+  height: 31px;
+  border-radius: 11px;
+  border: solid 1px #979797;
+  background-color: #fff;
+  outline: none;
 }
 
 .wrapper .content {
@@ -215,12 +261,18 @@ blockquote {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: overlay;
+  max-height: calc(100vh - 250px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrapper .content .jogs_block .jog_item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 80px;
 }
 
 .wrapper .content .jogs_block .jog_item img {
@@ -252,6 +304,61 @@ blockquote {
   font-size: 14px;
   font-weight: 500;
   opacity: 0.5;
+}
+
+.wrapper .content .jogs_block .jog_item .edit_btn {
+  width: 30px;
+  height: 30px;
+  margin-left: 30px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.wrapper .content .jogs_block .jog_item .edit_btn:hover {
+  cursor: pointer;
+}
+
+.wrapper .content .jogs_block .no_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 100px;
+}
+
+.wrapper .content .jogs_block .no_item img {
+  width: 150px;
+  height: 151px;
+  margin-bottom: 47px;
+}
+
+.wrapper .content .jogs_block .no_item p {
+  font-size: 24px;
+  opacity: 0.5;
+  margin-bottom: 141px;
+}
+
+.wrapper .content .jogs_block .no_item .create_jog_btn {
+  width: 249px;
+  height: 60px;
+  border-radius: 36px;
+  border: solid 3px #e990f9;
+  color: #e990f9;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .wrapper .content .info_block {
@@ -295,6 +402,7 @@ blockquote {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 44px;
 }
 
 .wrapper .content .login_block img {
@@ -326,4 +434,17 @@ blockquote {
 
 .add_btn:hover {
   cursor: pointer;
+}
+
+.error_text {
+  color: red;
+  visibility: hidden;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 10px;
+}
+
+.error_text.visible {
+  visibility: visible;
 }
