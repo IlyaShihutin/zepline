@@ -30,7 +30,7 @@ export default function jogsReducer(state = initialState, action) {
             return {
                 ...state,
                 isLoading: false,
-                jogs: [...state.jogs, action.newJog.response]
+                jogs: [...action.newJog]
             };
         case jogsConstants.GET_JOGS_GET_FAILURE:
             return {
@@ -54,6 +54,11 @@ export default function jogsReducer(state = initialState, action) {
             return {
                 ...state,
                 filter: { ...action.date }
+            };
+        case jogsConstants.CLEAR_ERROR:
+            return {
+                ...state,
+                error: ""
             };
         default: return state
     }

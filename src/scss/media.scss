@@ -1,5 +1,205 @@
-@media screen and (max-width: 767px) {
-}
+@media screen and (max-width: 630px) {
+    .wrapper {
+        .header {
+            padding: 20px 25px 20px;
+            height: 77px;
 
-@media screen and (max-width: 499px) {
+            &.open {
+                background-color: #fff;
+
+                svg path {
+                    fill: red;
+                }
+
+                svg {
+                    fill: red;
+
+                    g {
+                        fill: red;
+                    }
+
+                    path {
+                        fill: red;
+                    }
+                }
+            }
+
+            .header_title {
+                display: none;
+            }
+
+            .header_title_mob {
+                display: flex;
+                align-items: center;
+
+
+                .filter_img {
+                    margin-right: 39px;
+                }
+
+                .burger_icon {
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 28px;
+
+                    .filter_img {
+                        margin: 0;
+                    }
+
+                    &>div {
+                        width: 28px;
+                        background-color: #fff;
+                        height: 5px;
+                        margin-bottom: 4px;
+
+                        &:nth-child(3) {
+                            margin: 0;
+                        }
+                    }
+                }
+
+                .burger_list {
+                    position: absolute;
+                    background-color: #fff;
+                    width: 100%;
+                    left: 0;
+                    top: 75px;
+                    height: calc(100% - 75px);
+                    z-index: 2;
+                    justify-content: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    p {
+                        font-size: 28px;
+                        font-weight: bold;
+                        margin-bottom: 30px;
+
+                        &.active {
+                            color: #7ed321;
+                        }
+
+                        &:nth-child(3) {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .filter_block {
+            padding: 16px 29px 13px;
+            margin-bottom: 0px;
+
+            .date_input {
+                input {
+                    width: 72px;
+                    height: 31px;
+                }
+
+                p {
+                    margin-right: 8px;
+                }
+
+                &:nth-child(2) {
+                    margin-left: 35px;
+                }
+            }
+        }
+
+        .content {
+            .login_block {
+                width: 100%;
+                background-color: inherit;
+                margin-top: 80px;
+
+                .login_btn {
+                    background-color: #fff;
+                    border-color: #e990f9;
+                    color: #e990f9;
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-top: 103px;
+                }
+            }
+
+            .info_block {
+                width: 325px;
+
+                h1 {
+                    font-size: 25px;
+                    margin-bottom: 6px;
+                }
+
+                p {
+                    font-size: 12px;
+                    line-height: 24px;
+                }
+            }
+
+            .add_block {
+                width: 307px;
+                height: 380px;
+                margin-top: 80px;
+
+                .date_input,
+                .add_item {
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    p {
+                        font-size: 13px;
+                        margin-bottom: 6px;
+                    }
+                }
+
+                .cancel_btn {
+                    width: 18px;
+                    height: 18px;
+                }
+
+                .save_btn {
+                    width: 237px;
+                }
+            }
+
+            .jogs_block {
+                max-height: calc(100vh - 200px);
+
+                .jog_item {
+                    border-bottom: 1px solid rgba(215, 215, 215, 0.5);
+                    padding: 45px 0px;
+                    margin-bottom: 0;
+
+                    &:nth-child(1) {
+                        padding-top: 0;
+                    }
+
+                    .no_item {
+                        img {
+                            width: 85px;
+                            height: 85px;
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mob_invisible {
+            display: none;
+        }
+
+        .mob_visible {
+            display: block;
+        }
+    }
+
+    .add_btn {
+        width: 47px;
+        height: 47px;
+        bottom: 30px;
+        right: 30px;
+    }
 }

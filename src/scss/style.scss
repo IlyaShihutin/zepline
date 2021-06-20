@@ -60,6 +60,10 @@ blockquote {
             display: flex;
         }
 
+        .header_title_mob {
+            display: none;
+        }
+
         .header_title {
             display: flex;
             color: #fff;
@@ -106,6 +110,7 @@ blockquote {
         justify-content: center;
         align-items: center;
         border-radius: 44px;
+        margin-top: 80px;
 
         img {
             position: absolute;
@@ -142,6 +147,7 @@ blockquote {
             border-radius: 25.2px;
             border: 2px solid #fff;
             background-color: #7ed321;
+            color: #fff;
 
             &:hover {
                 cursor: pointer;
@@ -206,16 +212,20 @@ blockquote {
         align-self: center;
         align-items: center;
         justify-content: center;
+        width: 100%;
 
         .jogs_block {
             display: flex;
             flex-direction: column;
             overflow: overlay;
-            max-height: calc(100vh - 250px);
+            max-height: calc(100vh - 260px);
             align-items: center;
+            width: 100%;
 
             .jog_item {
+                width: 100%;
                 display: flex;
+                justify-content: center;
                 margin-bottom: 80px;
 
                 img {
@@ -306,7 +316,10 @@ blockquote {
             p {
                 font-size: 14px;
                 line-height: 1.71;
-                margin-bottom: 30px;
+
+                &:nth-child(2) {
+                    margin-bottom: 30px;
+                }
             }
         }
 
@@ -319,6 +332,7 @@ blockquote {
             flex-direction: column;
             align-items: center;
             border-radius: 44px;
+            margin-top: 150px;
 
             img {
                 width: 160px;
@@ -340,6 +354,14 @@ blockquote {
             }
         }
     }
+
+    .mob_invisible {
+        display: block;
+    }
+
+    .mob_visible {
+        display: none;
+    }
 }
 
 .add_btn {
@@ -359,6 +381,7 @@ blockquote {
     visibility: hidden;
     align-self: center;
     margin-bottom: 10px;
+    min-height: 22px;
 
     &.visible {
         visibility: visible;

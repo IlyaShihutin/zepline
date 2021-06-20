@@ -1,1 +1,183 @@
-/* No CSS */
+@media screen and (max-width: 630px) {
+  .wrapper .header {
+    padding: 20px 25px 20px;
+    height: 77px;
+  }
+  .wrapper .header.open {
+    background-color: #fff;
+  }
+  .wrapper .header.open svg path {
+    fill: red;
+  }
+  .wrapper .header.open svg {
+    fill: red;
+  }
+  .wrapper .header.open svg g {
+    fill: red;
+  }
+  .wrapper .header.open svg path {
+    fill: red;
+  }
+  .wrapper .header .header_title {
+    display: none;
+  }
+  .wrapper .header .header_title_mob {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .wrapper .header .header_title_mob .filter_img {
+    margin-right: 39px;
+  }
+  .wrapper .header .header_title_mob .burger_icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-width: 28px;
+  }
+  .wrapper .header .header_title_mob .burger_icon .filter_img {
+    margin: 0;
+  }
+  .wrapper .header .header_title_mob .burger_icon > div {
+    width: 28px;
+    background-color: #fff;
+    height: 5px;
+    margin-bottom: 4px;
+  }
+  .wrapper .header .header_title_mob .burger_icon > div:nth-child(3) {
+    margin: 0;
+  }
+  .wrapper .header .header_title_mob .burger_list {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    top: 75px;
+    height: calc(100% - 75px);
+    z-index: 2;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .wrapper .header .header_title_mob .burger_list p {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  .wrapper .header .header_title_mob .burger_list p.active {
+    color: #7ed321;
+  }
+  .wrapper .header .header_title_mob .burger_list p:nth-child(3) {
+    margin: 0;
+  }
+  .wrapper .filter_block {
+    padding: 16px 29px 13px;
+    margin-bottom: 0px;
+  }
+  .wrapper .filter_block .date_input input {
+    width: 72px;
+    height: 31px;
+  }
+  .wrapper .filter_block .date_input p {
+    margin-right: 8px;
+  }
+  .wrapper .filter_block .date_input:nth-child(2) {
+    margin-left: 35px;
+  }
+  .wrapper .content .login_block {
+    width: 100%;
+    background-color: inherit;
+    margin-top: 80px;
+  }
+  .wrapper .content .login_block .login_btn {
+    background-color: #fff;
+    border-color: #e990f9;
+    color: #e990f9;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 103px;
+  }
+  .wrapper .content .info_block {
+    width: 325px;
+  }
+  .wrapper .content .info_block h1 {
+    font-size: 25px;
+    margin-bottom: 6px;
+  }
+  .wrapper .content .info_block p {
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .wrapper .content .add_block {
+    width: 307px;
+    height: 380px;
+    margin-top: 80px;
+  }
+  .wrapper .content .add_block .date_input,
+  .wrapper .content .add_block .add_item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .wrapper .content .add_block .date_input p,
+  .wrapper .content .add_block .add_item p {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .wrapper .content .add_block .cancel_btn {
+    width: 18px;
+    height: 18px;
+  }
+  .wrapper .content .add_block .save_btn {
+    width: 237px;
+  }
+  .wrapper .content .jogs_block {
+    max-height: calc(100vh - 200px);
+  }
+  .wrapper .content .jogs_block .jog_item {
+    border-bottom: 1px solid rgba(215, 215, 215, 0.5);
+    padding: 45px 0px;
+    margin-bottom: 0;
+  }
+  .wrapper .content .jogs_block .jog_item:nth-child(1) {
+    padding-top: 0;
+  }
+  .wrapper .content .jogs_block .jog_item .no_item img {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 30px;
+  }
+  .wrapper .mob_invisible {
+    display: none;
+  }
+  .wrapper .mob_visible {
+    display: block;
+  }
+  .add_btn {
+    width: 47px;
+    height: 47px;
+    bottom: 30px;
+    right: 30px;
+  }
+}

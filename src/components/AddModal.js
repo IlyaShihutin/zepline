@@ -35,7 +35,7 @@ const Login = ({ setActiveTab, editModal, setEditModal }) => {
             setError(true);
         } else {
             const objJog = jog;
-            objJog.date = moment(jog.date).format('DD.MM.YYYY')
+            objJog.date = moment(jog.date).format('DD/MM/YYYY')
             const rawData = new URLSearchParams(Object.keys(objJog).map(key => [key, objJog[key]]));
             dispatch(jogsAction.post(rawData.toString()));
             setActiveTab(TABS.JOGS);
@@ -46,25 +46,27 @@ const Login = ({ setActiveTab, editModal, setEditModal }) => {
         if (!jog.distance || !jog.time || !jog.date) {
             setError(true);
         } else {
-            const objJog = jog;
+            const objJog = { ...jog };
             objJog.date = moment(jog.date).format('DD/MM/YYYY')
             objJog.jog_id = jog.id;
             const rawData = new URLSearchParams(Object.keys(objJog).map(key => [key, objJog[key]]));
             const jogsList = jogs.map(elem => {
-                if (elem.id === objJog.jog_id) {
-                    elem.distance = objJog.distance;
-                    elem.time = objJog.time;
-                    elem.date = objJog.date;
-                    return;
+                if (elem.id === jog.id) {
+                    elem.distance = jog.distance;
+                    elem.time = jog.time;
+                    elem.date = jog.date;
                 }
+                return elem
             })
+            console.log("jog")
+            console.log(jog)
             dispatch(jogsAction.put(rawData.toString(), jogsList));
             setEditModal({})
             setActiveTab(TABS.JOGS);
-            console.log("pidor2")
+
         }
     }
-
+console.log(editModal?.id)
     return (
         <div className="add_block">
             <img src={`${process.env.PUBLIC_URL}/img/cancel.svg`} onClick={() => closeModal()} className="cancel_btn" alt="cancel"></img>
@@ -72,7 +74,7 @@ const Login = ({ setActiveTab, editModal, setEditModal }) => {
             <Input title="Distance" value={jog.distance} name="distance" handleChange={handleChange} />
             <Input title="Time" value={jog.time} name="time" handleChange={handleChange} />
             <DataPicker title="Date" selectDay={jog.date} name="date" setSelectDay={handleChange} />
-            <button className="save_btn" onClick={() => editModal.length ? edit() : save()}>Save</button>
+            <button className="save_btn" onClick={() => editModal?.id ? edit() : save()}>Save</button>
         </div>
     );
 }

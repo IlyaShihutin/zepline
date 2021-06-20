@@ -16,7 +16,8 @@ const Login = ({ setActiveTab }) => {
     }
     return (
         <div className="login_block">
-            <img src={`${process.env.PUBLIC_URL}/img/bear-face.svg`} alt="calendar"></img>
+            <img src={`${process.env.PUBLIC_URL}/img/bear_face.svg`} className="mob_invisible" alt="bear_face"></img>
+            <img src={`${process.env.PUBLIC_URL}/img/bear_face_pink.svg`} className="mob_visible" alt="bear_face"></img>
             <button className="login_btn" onClick={() => loggin()}>Let me in</button>
         </div>
     );

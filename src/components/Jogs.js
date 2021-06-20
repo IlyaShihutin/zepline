@@ -1,6 +1,6 @@
 
-import React, {  useMemo } from 'react';
-import {  useSelector } from 'react-redux';
+import React, { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import moment from "moment";
 import { TABS } from "../_constants/tabConstants";
 import { filterDate } from "../_helpers/filter-date"
@@ -9,11 +9,11 @@ const Jogs = ({ setActiveTab, openEditModal }) => {
     const filter = useSelector(state => state.jogsReducer.filter);
 
     const jogsList = useMemo(() => filter.from || filter.to ? jogs.filter(elem => filterDate(elem.date, ...[filter])) : jogs, [jogs, filter]);
-console.log(jogsList)
+    console.log(jogsList)
     return (
         <div className="jogs_block">
             {jogsList.map((elem) => {
-                const speed = Math.floor(elem.distance / elem.time * 100) / 100;
+                const speed = Math.floor(Number(elem.distance) / Number(elem.time) * 100) / 100;
                 return <div className="jog_item" key={elem.id}>
                     <img src={`${process.env.PUBLIC_URL}/img/run_img.svg`} alt="run"></img>
                     <div className="jog_text">

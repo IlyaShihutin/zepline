@@ -14,6 +14,7 @@ export const jogsConstants = {
     GET_JOGS_PUT_FAILURE: 'GET_JOGS_PUT_FAILURE',
 
     FILTER: "FILTER",
+    CLEAR_ERROR: "CLEAR_ERROR"
 }
 
 export const requestConstants = {

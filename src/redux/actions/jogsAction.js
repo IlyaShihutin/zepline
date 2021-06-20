@@ -17,12 +17,12 @@ const get = () => {
     function failure() { return { type: jogsConstants.GET_JOGS_GET_FAILURE } }
 }
 
-const post = (jog) => {
+const post = (jog,jogRedux) => {
     return dispatch => {
         dispatch(request());
         User.post(jog)
             .then(
-                jogs => dispatch(success(jogs)),
+                () => dispatch(success(jog)),
                 () => dispatch(failure())
             );
     };
@@ -49,10 +49,13 @@ const put = (jog, newJogs) => {
 const filter = (date) => {
     return { type: jogsConstants.FILTER, date };
 }
-
+const clearError = () => {
+    return { type: jogsConstants.CLEAR_ERROR };
+}
 export const jogsAction = {
     get,
     post,
     put,
-    filter
+    filter,
+    clearError
 };
