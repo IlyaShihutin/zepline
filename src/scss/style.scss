@@ -104,6 +104,12 @@ blockquote {
         }
     }
 
+    .load {
+        align-self: center;
+        font-size: 40px;
+        font-weight: bold
+    }
+
     .add_block {
         display: flex;
         flex-direction: column;

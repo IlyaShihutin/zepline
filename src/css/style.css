@@ -121,6 +121,14 @@ blockquote {
   min-width: 39px;
 }
 
+.wrapper .load {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
 .wrapper .add_block {
   display: -webkit-box;
   display: -ms-flexbox;

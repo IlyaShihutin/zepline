@@ -40,7 +40,6 @@ export const requestConstants = {
         }
     },
     REQUEST_PUT: function (jog) {
-        console.log(jog)
         return {
             method: 'PUT',
             headers: { ...authHeader(), 'Content-Type': 'application/x-www-form-urlencoded', "Accept": "application/json" },
