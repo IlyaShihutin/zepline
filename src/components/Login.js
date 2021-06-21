@@ -1,19 +1,29 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import User from '../_services/User.service';
 import { TABS } from "../_constants/tabConstants";
 import { jogsAction } from '../redux/actions/jogsAction';
+import { authHeader } from "../_helpers/auth-header"
 const Login = ({ setActiveTab }) => {
     const dispatch = useDispatch();
-    const loggin = () => {
+    const token = useMemo(() => authHeader(), []);
 
-        if (!localStorage.getItem('userToken')) {
-            User.auth();
+    const loggin = async () => {
+
+        if (!token.Authorization) {
+            User.auth().then(data => {
+                localStorage.setItem("userToken", JSON.stringify(data.response))
+                dispatch(jogsAction.get({ 'Authorization': 'Bearer ' + data.response.access_token }))
+                setActiveTab(TABS.JOGS);
+            })
+        } else {
+            dispatch(jogsAction.get(token));
+            setActiveTab(TABS.JOGS);
         }
-        dispatch(jogsAction.get());
-        setActiveTab(TABS.JOGS);
+
     }
+
     return (
         <div className="login_block">
             <img src={`${process.env.PUBLIC_URL}/img/bear_face.svg`} className="mob_invisible" alt="bear_face"></img>

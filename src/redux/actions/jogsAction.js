@@ -2,10 +2,10 @@ import { jogsConstants } from '../../_constants/jogsConstants';
 import User from "../../_services/User.service"
 
 
-const get = () => {
+const get = (response) => {
     return dispatch => {
         dispatch(request());
-        User.get()
+        User.get(response)
             .then(
                 jogs => dispatch(success(jogs)),
                 () => dispatch(failure())

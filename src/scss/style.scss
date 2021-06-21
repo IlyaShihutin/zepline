@@ -277,7 +277,7 @@ blockquote {
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                margin-top: 100px;
+                margin-top: 50px;
 
                 img {
                     width: 150px;
@@ -300,6 +300,10 @@ blockquote {
                     background-color: #fff;
                     font-size: 18px;
                     font-weight: bold;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
         }
