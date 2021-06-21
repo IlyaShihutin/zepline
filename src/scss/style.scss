@@ -69,6 +69,10 @@ blockquote {
             color: #fff;
             align-items: center;
 
+            &>div {
+                min-width: 39px;
+            }
+
             p {
                 margin-right: 45px;
                 white-space: nowrap;

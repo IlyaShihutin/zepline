@@ -26,19 +26,19 @@ const Header = ({ activeTab, setActiveTab }) => {
     return (
         <>
             <div className={isOpenBurger ? "header open" : "header"} >
-                <img src={`${process.env.PUBLIC_URL}/img/${isOpenBurger ? "logo_green" : "logo"}.svg`} className="header_logo" alt="calendar"></img>
+                <img src={`${process.env.PUBLIC_URL}/img/${isOpenBurger ? "logo_green" : "logo"}.svg`} className="header_logo" alt="logo"></img>
                 {activeTab !== TABS.LOG &&
                     <>
                         <div className="header_title">
                             <p onClick={() => changeTab(TABS.JOGS)} className={activeTab === TABS.JOGS ? "active" : ""}>JOGS</p>
                             <p onClick={() => changeTab(TABS.INFO)} className={activeTab === TABS.INFO ? "active" : ""}>INFO</p>
                             <p onClick={() => changeTab(TABS.CONTACT)} className={activeTab === TABS.CONTACT ? "active" : ""}>CONTACT US</p>
-                            {activeTab === TABS.JOGS && <img src={`${process.env.PUBLIC_URL}/img/${!filterActive ? "filter_close" : "filter_open"}.svg`}
-                                onClick={() => setFilterActive(!filterActive)} className="filter_img" alt="calendar"></img>}
+                            {activeTab === TABS.JOGS ? <img src={`${process.env.PUBLIC_URL}/img/${!filterActive ? "filter_close" : "filter_open"}.svg`}
+                                onClick={() => setFilterActive(!filterActive)} className="filter_img" alt="filter_img"></img>:<div></div>}
                         </div>
                         <div className="header_title_mob">
                             {activeTab === TABS.JOGS && !isOpenBurger && <img src={`${process.env.PUBLIC_URL}/img/${!filterActive ? "filter_close" : "filter_open"}.svg`}
-                                onClick={() => setFilterActive(!filterActive)} className="filter_img" alt="calendar"></img>}
+                                onClick={() => setFilterActive(!filterActive)} className="filter_img" alt="filter_img"></img>}
                             <Burger setIsOpenBurger={setIsOpenBurger} isOpenBurger={isOpenBurger} />
 
                             {isOpenBurger && <div className="burger_list">
