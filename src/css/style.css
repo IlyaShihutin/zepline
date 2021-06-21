@@ -90,6 +90,10 @@ blockquote {
           align-items: center;
 }
 
+.wrapper .header .header_title > div {
+  min-width: 39px;
+}
+
 .wrapper .header .header_title p {
   margin-right: 45px;
   white-space: nowrap;
