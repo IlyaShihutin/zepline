@@ -9,7 +9,7 @@ const Jogs = ({ setActiveTab, openEditModal }) => {
     const filter = useSelector(state => state.jogsReducer.filter);
 
     const jogsList = useMemo(() => filter.from || filter.to ? jogs.filter(elem => filterDate(elem.date, ...[filter])) : jogs, [jogs, filter]);
-    console.log(jogsList)
+
     return (
         <div className="jogs_block">
             {jogsList.map((elem) => {

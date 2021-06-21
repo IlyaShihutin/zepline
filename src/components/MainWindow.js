@@ -16,7 +16,7 @@ const MainWindow = () => {
     const error = useSelector(state => state.jogsReducer.error);
     const jogs = useSelector(state => state.jogsReducer.jogs);
     const dispatch = useDispatch();
-    
+
     const openEditModal = (jog) => {
         setEditModal({ ...jog })
         setActiveTab(TABS.ADD)
@@ -30,7 +30,7 @@ const MainWindow = () => {
         <div className="wrapper">
             <Header activeTab={activeTab} setActiveTab={setActiveTab} />
             <p className={error ? "error_text visible" : "error_text"}>{error}</p>
-            {!isLoading && <>
+            {!isLoading ? <>
                 <div className="content">
                     {activeTab === TABS.CONTACT && <Contact />}
                     {activeTab === TABS.INFO && <Info />}
@@ -40,6 +40,7 @@ const MainWindow = () => {
                 </div>
                 {activeTab !== TABS.LOG && jogs.length && activeTab !== TABS.ADD && <img src={`${process.env.PUBLIC_URL}/img/add.svg`} onClick={() => setActiveTab(TABS.ADD)} className="add_btn" alt="add"></img>}
             </>
+                : <div></div>
             }
 
         </div>

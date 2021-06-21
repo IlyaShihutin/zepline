@@ -18,9 +18,11 @@ export const jogsConstants = {
 }
 
 export const requestConstants = {
-    REQUEST_GET: {
-        method: 'GET',
-        headers: { ...authHeader(), 'Content-Type': 'application/json', "Accept": "application/json" },
+    REQUEST_GET: function (response) {
+        return {
+            method: 'GET',
+            headers: { ...response, 'Content-Type': 'application/json', "Accept": "application/json" },
+        }
     },
     REQUEST_AUTH: {
         method: 'POST',

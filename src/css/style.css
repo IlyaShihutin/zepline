@@ -351,7 +351,7 @@ blockquote {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .wrapper .content .jogs_block .no_item img {
@@ -375,6 +375,10 @@ blockquote {
   background-color: #fff;
   font-size: 18px;
   font-weight: bold;
+}
+
+.wrapper .content .jogs_block .no_item .create_jog_btn:hover {
+  cursor: pointer;
 }
 
 .wrapper .content .info_block {
