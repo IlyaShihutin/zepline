@@ -40,7 +40,7 @@ const MainWindow = () => {
                 </div>
                 {activeTab !== TABS.LOG && jogs.length && activeTab !== TABS.ADD && <img src={`${process.env.PUBLIC_URL}/img/add.svg`} onClick={() => setActiveTab(TABS.ADD)} className="add_btn" alt="add"></img>}
             </>
-                : <div></div>
+                : <div className="load">LOAD...</div>
             }
 
         </div>

@@ -30,7 +30,7 @@ export default function jogsReducer(state = initialState, action) {
             return {
                 ...state,
                 isLoading: false,
-                jogs: [...action.newJog]
+                jogs: [...action.allJogs]
             };
         case jogsConstants.GET_JOGS_GET_FAILURE:
             return {

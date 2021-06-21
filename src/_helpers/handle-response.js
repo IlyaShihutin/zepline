@@ -2,7 +2,7 @@ export const origin = 'https://jogtracker.herokuapp.com';
 
 export const config = '/api/v1/';
 
-export function handleResponse(response) {
+export const handleResponse = (response) => {
   return response.text().then(text => {
     const data = text && JSON.parse(text);
     if (!response.ok) {

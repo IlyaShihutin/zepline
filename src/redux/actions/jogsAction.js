@@ -17,12 +17,12 @@ const get = (response) => {
     function failure() { return { type: jogsConstants.GET_JOGS_GET_FAILURE } }
 }
 
-const post = (jog,jogRedux) => {
+const post = (jog) => {
     return dispatch => {
         dispatch(request());
         User.post(jog)
             .then(
-                () => dispatch(success(jog)),
+                (jog) => dispatch(success(jog)),
                 () => dispatch(failure())
             );
     };
@@ -31,18 +31,28 @@ const post = (jog,jogRedux) => {
     function success(newJog) { return { type: jogsConstants.GET_JOGS_POST_SUCCESS, newJog } }
     function failure() { return { type: jogsConstants.GET_JOGS_POST_FAILURE } }
 }
-const put = (jog, newJogs) => {
+
+const put = (jog, jogs) => {
     return dispatch => {
         dispatch(request());
         User.put(jog)
             .then(
-                () => dispatch(success(newJogs)),
+                (newJog) => dispatch(success(newJog, jogs)),
                 () => dispatch(failure())
             );
     };
 
     function request() { return { type: jogsConstants.GET_JOGS_PUT } }
-    function success(newJog) { return { type: jogsConstants.GET_JOGS_PUT_SUCCESS, newJog } }
+    function success(newJog, jogs) {
+        const allJogs = [...jogs];
+        for (let i = 0; i < allJogs.length; i++) {
+            if (allJogs[i].id === newJog.response.id) {
+                allJogs[i] = newJog.response;
+                break;
+            }
+        }
+        return { type: jogsConstants.GET_JOGS_PUT_SUCCESS, allJogs }
+    }
     function failure() { return { type: jogsConstants.GET_JOGS_PUT_FAILURE } }
 }
 

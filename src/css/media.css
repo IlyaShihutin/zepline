@@ -160,6 +160,9 @@
     padding: 45px 0px;
     margin-bottom: 0;
   }
+  .wrapper .content .jogs_block .jog_item img {
+    margin-right: 30px;
+  }
   .wrapper .content .jogs_block .jog_item:nth-child(1) {
     padding-top: 0;
   }
