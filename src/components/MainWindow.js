@@ -38,7 +38,7 @@ const MainWindow = () => {
                     {activeTab === TABS.LOG && <Login setActiveTab={setActiveTab} />}
                     {activeTab === TABS.ADD && <AddModal setActiveTab={setActiveTab} editModal={editModal} setEditModal={setEditModal} />}
                 </div>
-                {activeTab !== TABS.LOG && jogs.length && activeTab === TABS.ADD && <img src={`${process.env.PUBLIC_URL}/img/add.svg`} onClick={() => setActiveTab(TABS.ADD)} className="add_btn" alt="add"></img>}
+                {activeTab !== TABS.LOG && jogs.length && activeTab === TABS.JOGS && <img src={`${process.env.PUBLIC_URL}/img/add.svg`} onClick={() => setActiveTab(TABS.ADD)} className="add_btn" alt="add"></img>}
             </>
                 : <div className="load">LOAD...</div>
             }
