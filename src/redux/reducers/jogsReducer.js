@@ -36,19 +36,19 @@ export default function jogsReducer(state = initialState, action) {
             return {
                 ...state,
                 isLoading: false,
-                error: 'Error while getting the list of jogs'
+                error: 'Error getting the list of jogs'
             };
         case jogsConstants.GET_JOGS_POST_FAILURE:
             return {
                 ...state,
                 isLoading: false,
-                error: 'Error while creating jog'
+                error: 'Error creating jog'
             };
         case jogsConstants.GET_JOGS_PUT_FAILURE:
             return {
                 ...state,
                 isLoading: false,
-                error: 'Error while editing jog'
+                error: 'Error editing jog'
             };
         case jogsConstants.FILTER:
             return {
