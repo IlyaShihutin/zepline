@@ -9,7 +9,7 @@ const Login = ({ setActiveTab }) => {
     const dispatch = useDispatch();
     const token = useMemo(() => authHeader(), []);
 
-    const loggin = async () => {
+    const login = async () => {
 
         if (!token.Authorization) {
             User.auth().then(data => {
@@ -28,7 +28,7 @@ const Login = ({ setActiveTab }) => {
         <div className="login_block">
             <img src={`${process.env.PUBLIC_URL}/img/bear_face.svg`} className="mob_invisible" alt="bear_face"></img>
             <img src={`${process.env.PUBLIC_URL}/img/bear_face_pink.svg`} className="mob_visible" alt="bear_face"></img>
-            <button className="login_btn" onClick={() => loggin()}>Let me in</button>
+            <button className="login_btn" onClick={() => login()}>Let me in</button>
         </div>
     );
 }
