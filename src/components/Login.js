@@ -9,7 +9,7 @@ const Login = ({ setActiveTab }) => {
     const dispatch = useDispatch();
     const token = useMemo(() => authHeader(), []);
 
-    const login = async () => {
+    const login = () => {
 
         if (!token.Authorization) {
             User.auth().then(data => {
